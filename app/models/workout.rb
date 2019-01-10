@@ -14,8 +14,8 @@ class Workout < ActiveRecord::Base
   # validations
 
   validates :name,
-            presence: true
-
+            presence: true,
+            uniqueness: true
 
   #----------------------------------------------------------------------------
   # associations

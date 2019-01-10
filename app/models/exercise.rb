@@ -1,6 +1,6 @@
 class Exercise < ActiveRecord::Base
   include UUID
-
+  include ActiveModel::Serialization
 
   #----------------------------------------------------------------------------
   # attributes
