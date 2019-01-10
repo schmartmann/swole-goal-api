@@ -12,6 +12,8 @@ class WorkoutsController < ApplicationController
   end
 
   def read
+    workouts = current_user.workouts.where( uuid: params[ :uuid ] )
+    render json: workouts
   end
 
   def write
