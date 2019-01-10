@@ -6,12 +6,14 @@ class Exercise < ActiveRecord::Base
   # attributes
 
   ATTRIBUTES = %i(
+    id
+    uuid
     name
     quantity
     unit
   ).freeze
 
-  UNITS = %i(
+  UNITS = %w(
     x
     second
     seconds

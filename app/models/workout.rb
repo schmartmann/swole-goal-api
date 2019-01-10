@@ -6,6 +6,7 @@ class Workout < ActiveRecord::Base
 
   ATTRIBUTES = %i(
     uuid
+    id
     name
   ).freeze
 

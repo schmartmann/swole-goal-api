@@ -1,4 +1,4 @@
-class WorkoutExercises < ActiveRecord::Base
+class WorkoutExercise < ActiveRecord::Base
   include UUID
 
   #----------------------------------------------------------------------------
@@ -6,6 +6,7 @@ class WorkoutExercises < ActiveRecord::Base
 
   ATTRIBUTES = %i(
     uuid
+    id
     workout_id
     exercise_id
   ).freeze
