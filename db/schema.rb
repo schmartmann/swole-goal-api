@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_234359) do
+ActiveRecord::Schema.define(version: 2019_01_10_011045) do
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "uuid"
+    t.string "name"
+    t.string "unit"
+    t.integer "quantity"
+  end
 
   create_table "users", force: :cascade do |t|
+    t.string "uuid"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -22,6 +30,21 @@ ActiveRecord::Schema.define(version: 2019_01_09_234359) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "workout_exercises", force: :cascade do |t|
+    t.integer "exercise_id"
+    t.integer "workout_id"
+    t.string "uuid"
+    t.index ["exercise_id"], name: "index_workout_exercises_on_exercise_id"
+    t.index ["workout_id"], name: "index_workout_exercises_on_workout_id"
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.string "uuid"
+    t.string "name"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 
 end
