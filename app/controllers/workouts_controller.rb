@@ -8,7 +8,6 @@ class WorkoutsController < ApplicationController
   )
 
   def query
-    binding.pry
     render json: current_user.workouts
   end
 
